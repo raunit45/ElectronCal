@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track Electron releases and Chromium updates in a beautiful, interactive calendar">
+    <meta name="theme-color" content="#0066ff">
+    <title>Electron Releases Calendar | Track Updates & Releases</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-menu">
+            <div class="logo">
+                <h1>ElectronCal</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Dashboard</a>
+                <a href="#calendar">Calendar</a>
+                <a href="#releases">Releases</a>
+                <a href="#">About</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+            </div>
+        </nav>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">192k</div>
+                <div class="stat-label">Total Downloads</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">34</div>
+                <div class="stat-label">Active Releases</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <section id="calendar" aria-label="Calendar view">
+                <div class="section-header">
+                    <h2>Release Calendar</h2>
+                    <div class="calendar-controls">
+                        <button class="btn-prev" aria-label="Previous month">←</button>
+                        <span class="current-month">Loading...</span>
+                        <button class="btn-next" aria-label="Next month">→</button>
+                    </div>
+                </div>
+                <div class="calendar-container">
+                    <!-- Calendar content will be dynamically inserted here -->
+                </div>
+            </section>
+            
+            <section id="releases" aria-label="Upcoming releases">
+                <div class="section-header">
+                    <h2>Upcoming Releases</h2>
+                    <div class="filter-controls">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="stable">Stable</button>
+                        <button class="filter-btn" data-filter="beta">Beta</button>
+                        <button class="filter-btn" data-filter="alpha">Alpha</button>
+                    </div>
+                </div>
+                <div id="upcoming-releases" class="releases-grid">
+                    <!-- Release information will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <p>Data synchronized with Chromium's upstream API • Last updated: <time id="last-update">Loading...</time></p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
